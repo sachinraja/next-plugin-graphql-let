@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Automatically configures webpack for graphql-let usage in Next.js.",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sachinraja/next-plugin-graphql-let.git"

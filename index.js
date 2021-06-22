@@ -19,18 +19,20 @@ module.exports = function createNextPluginGraphQLLet(pluginConfig = {}) {
           }
 
           rules.push({
-            test: pluginConfig.loaderTest || /\.graphql$/,
+            test: /\.graphql$/,
             exclude: /node_modules/,
             use: [
               options.defaultLoaders.babel,
               { loader: "graphql-let/loader" },
             ],
+            ...(pluginConfig.loader || {}),
           })
 
           rules.push({
-            test: pluginConfig.schemaLoaderTest || /\.graphqls$/,
+            test: /\.graphqls$/,
             exclude: /node_modules/,
             use: ["graphql-let/schema/loader"],
+            ...(pluginConfig.schemaLoader || {}),
           })
 
           return config

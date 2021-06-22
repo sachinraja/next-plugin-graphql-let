@@ -22,14 +22,14 @@ interface NextConfigValue {
 }
 
 interface NextPluginGraphQLLetOptions {
-  loaderTest?: RegExp
-  schemaLoaderTest?: RegExp
+  loader?: object
+  schemaLoader?: object
 }
 
 declare function createNextPluginGraphQLLet(
-  pluginConfig?: NextPluginGraphQLLetOptions = {}
+  pluginConfig?: NextPluginGraphQLLetOptions
 ): {
-  (nextConfig?: NextConfig = {}): NextConfigValue
+  (nextConfig?: NextConfig): NextConfigValue
 }
 
 export = createNextPluginGraphQLLet
