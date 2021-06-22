@@ -27,4 +27,6 @@ interface NextPluginGraphQLLetOptions {
   schemaLoaderTest: RegExp
 }
 
-export default (pluginConfig: NextPluginGraphQLLetOptions) => (nextConfig: NextConfig) => NextConfigValue
+const createNextPluginGraphQLLet = (pluginConfig: NextPluginGraphQLLetOptions) => (nextConfig: NextConfig) => NextConfigValue
+
+export default createNextPluginGraphQLLet
