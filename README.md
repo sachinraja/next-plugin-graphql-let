@@ -16,8 +16,9 @@ const createNextPluginGraphQLLet = require("next-plugin-graphql-let")
 
 const withNextPluginGraphQLLet = createNextPluginGraphQLLet()
 
-module.exports = withNextPluginGraphQLLet()
-// next.js configuration
+module.exports = withNextPluginGraphQLLet({
+    // next.js configuration
+})
 ```
 
 ## Example
@@ -64,7 +65,7 @@ const withNextPluginGraphQLLet = createNextPluginGraphQLLet({
   },
 })
 
-module.exports =
-  withNextPluginGraphQLLet()
-  // next.js configuration
+module.exports = withNextPluginGraphQLLet({
+    // next.js configuration
+})
 ```
