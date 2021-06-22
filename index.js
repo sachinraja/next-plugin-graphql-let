@@ -1,16 +1,26 @@
 module.exports = (pluginConfig = {}) => (nextConfig = {}) => {
   return Object.assign(
+    {},
     nextConfig,
     {
       webpack(config, options) {
-      pluginConfig.module.rules.push({
-        test: config.loaderTest || /\.graphql$/,
-        exclude: /node_modules/,
-        use: [options.defaultLoaders.babel, { loader: 'graphql-let/loader' }],
+      const webpackConfig = nextConfig.webpack?.(config, options) || config
+      const rules = webpackConfig.module?.rules
+      
+      if (!rules) {
+        throw new Error(
+          'Next Plugin graphql-let could not find webpack rules. Please file an issue.'
+        )
+      }
+
+      rules.push({
+      test: pluginConfig.loaderTest || /\.graphql$/,
+      exclude: /node_modules/,
+      use: [options.defaultLoaders.babel, { loader: 'graphql-let/loader' }],
       })
-  
-      pluginConfig.module.rules.push({
-        test: config.schemaLoaderTest || /\.graphqls$/,
+
+      rules.push({
+        test: pluginConfig.schemaLoaderTest || /\.graphqls$/,
         exclude: /node_modules/,
         use: ['graphql-let/schema/loader'],
       })
