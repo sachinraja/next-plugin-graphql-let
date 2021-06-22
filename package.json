@@ -1,0 +1,29 @@
+{
+  "name": "next-plugin-graphql-let",
+  "version": "1.0.0",
+  "description": "Automatically configures webpack for graphql-let usage in Next.js.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinraja/next-plugin-graphql-let.git"
+  },
+  "keywords": [
+    "graphql",
+    "graphql-let",
+    "next",
+    "next.js"
+  ],
+  "author": "Sachin Raja <sachinraja2349@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sachinraja/next-plugin-graphql-let/issues"
+  },
+  "homepage": "https://github.com/sachinraja/next-plugin-graphql-let#readme",
+  "peerDependencies": {
+    "graphql-let": "*",
+    "next": ">=9"
+  },
+  "devDependencies": {
+    "next": "^11.0.0"
+  }
+}
